@@ -1,0 +1,39 @@
+
+
+             #     #  #####        #    #    #     #  #####
+             ##    # #     #      #    # #   ##   ## #     #
+             # #   # #           #    #   #  # # # # #
+             #  #  # #  ####    #    #     # #  #  #  #####
+             #   # # #     #   #     ####### #     #       #
+             #    ## #     #  #      #     # #     # #     #
+             #     #  #####  #       #     # #     #  #####
+
+
+               Copyright (c) European Southern Observatory
+                         All rights reserved.
+
+
+INSTALLATION GUIDE FOR THE NG/AMS SOFTWARE PACKAGE:
+
+        J.Knudstrup.
+
+The steps needed for installing an NG/AMS system are described in the 
+user's  manual provided for NG/AMS. To avoid redundant information, and 
+maybe inconsistent information, please refer to this document.
+
+The document can be retrieved from the NGAST home page:
+
+	http://www.eso.org/projects/ngas
+
+Specific information for ESO:
+
+	http://www.eso.org/~jknudstr/NGAS/RELEASES/CURRENT/INSTALL
+
+In addition it can be requested from the NGAS responsibles by sending
+an email to the following email address:
+
+	ngast@eso.org
+
+Other questions or doubts in connection with the installation and 
+configuration of NG/AMS should also be directed to this email address.
+

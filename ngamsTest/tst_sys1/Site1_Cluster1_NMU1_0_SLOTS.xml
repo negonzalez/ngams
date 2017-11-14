@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE NgamsCfg SYSTEM "ngamsCfg.dtd">
+
+<NgamsCfg>
+
+  <ArchiveHandling BackLogBufferDirectory="/tmp/NGAS-TMP/SITE1/NMU1" 
+                   BackLogBuffering="0"
+		   FreeSpaceDiskChangeMb="0" 
+		   Id="ArchiveHandling_NMU_0_SLOTS_1"
+		   MinFreeSpaceWarningMb="0" 
+		   PathPrefix="---" 
+		   Replication="0"/>
+
+  <Authorization Enable="0" Id="Authorization_OFF"/>
+
+  <DataCheckThread Active="0" ChecksumPlugIn="---"
+  ChecksumPlugInPars=" " DiskSeq="SEQUENTIAL" FileSeq="SEQUENTIAL"
+  ForceNotif="1" Id="DataCheckThread_DCC_OFF" LogSummary="1"
+  MaxProcs="4" MinCycle="07T00:00:00" Prio="1" Scan="0"/>
+
+  <Db Id="Db-DEV15SRV-ngas"
+      AutoRecover="1"
+      Interface="ngamsSybase" 
+      Name="ngas" 
+      Password="bmdhc19wdw==" 
+      Server="DEV15SRV" 
+      Snapshot="1" 
+      User="ngas"
+      Verify="1"/>
+
+  <HostSuspension Id="HostSuspension_OFF" IdleSuspension="0"
+  IdleSuspensionTime="60" SuspensionPlugIn="---"
+  SuspensionPlugInPars=" " WakeUpCallTimeOut="0" WakeUpPlugIn="---"
+  WakeUpPlugInPars=" " WakeUpServerHost="---"/>
+
+  <JanitorThread Id="JanitorThread_COMMON_1" MinSpaceSysDirMb="1000"
+  SuspensionTime="1T00:00:00"/>
+
+  <Log Id="Log_COMMON_1" 
+       LocalLogFile="/tmp/NGAS-TMP/SITE1/NMU1/log/LogFile.nglog"
+       LocalLogLevel="3" LogBufferSize="10" LogRotateCache="30"
+       LogRotateInt="01T00:00:00" SysLog="1" SysLogPrefix="DFSLog"/>
+
+  <MimeTypes Id="MimeTypes_COMMON_1">
+    <MimeTypeMap Extension="hdr" MimeType="image/x-fitshdr"/>
+    <MimeTypeMap Extension="tar" MimeType="application/x-tar"/>
+    <MimeTypeMap Extension="tfits" MimeType="cal/x-tfits"/>
+    <MimeTypeMap Extension="fits.gz" MimeType="apex/x-gfits"/>
+    <MimeTypeMap Extension="fits" MimeType="apex/x-fits"/>
+    <MimeTypeMap Extension="fits" MimeType="image/x-fits"/>
+    <MimeTypeMap Extension="nglog" MimeType="ngas/nglog"/>
+    <MimeTypeMap Extension="nglog.Z" MimeType="application/x-cnglog"/>
+    <MimeTypeMap Extension="log" MimeType="text/log-file"/>
+    <MimeTypeMap Extension="log.Z" MimeType="application/x-clog"/>
+    <MimeTypeMap Extension="paf" MimeType="text/paf"/>
+    <MimeTypeMap Extension="fits.gz" MimeType="application/x-gfits"/>
+    <MimeTypeMap Extension="fits.Z" MimeType="application/x-cfits"/>
+    <MimeTypeMap Extension="hfits" MimeType="application/x-hfits"/>
+  </MimeTypes>
+
+  <Notification Id="Notification-Test"
+                SmtpHost="localhost"
+                Sender="ngast@eso.org"
+                Active="1"
+                MaxRetentionTime="00T00:30:00"
+                MaxRetentionSize="1000">
+    <AlertNotification>
+      <EmailRecipient Address="DEFINE@eso.org"/>
+    </AlertNotification>
+      
+    <ErrorNotification>
+      <EmailRecipient Address="DEFINE@eso.org"/>
+    </ErrorNotification>
+
+    <DiskSpaceNotification>
+      <EmailRecipient Address="DEFINE@eso.org"/>
+    </DiskSpaceNotification>
+
+    <DiskChangeNotification>
+      <EmailRecipient Address="DEFINE@eso.org"/>
+    </DiskChangeNotification>
+
+    <NoDiskSpaceNotification>
+      <EmailRecipient Address="DEFINE@eso.org"/>
+    </NoDiskSpaceNotification>
+
+    <DataErrorNotification>
+      <EmailRecipient Address="DEFINE@eso.org"/>
+    </DataErrorNotification>
+  </Notification>
+
+  <Permissions AllowArchiveReq="1" AllowProcessingReq="1"
+  AllowRemoveReq="0" AllowRetrieveReq="1" Id="Permissions_NMU"/>
+
+  <Processing Id="Processing_NMU_0_SLOTS_1"
+  ProcessingDirectory="/tmp/NGAS-TMP/SITE1/NMU1"/>
+
+  <Register Id="Register_DISABLED"/>
+
+  <Server ArchiveName="ESO-ARCHIVE" 
+          BlockSize="65536"
+	  Id="Server_COMMON_1" 
+	  MaxSimReqs="30" 
+	  RootDirectory="/tmp/NGAS-TMP/SITE1/NMU1"
+	  PortNo="6000" 
+	  ProxyMode="1" 
+	  Simulation="0" 
+	  SwVersion=" "
+          VolumeDirectory="volumes"/>
+
+  <Streams Id="Streams_NMU_0_SLOTS_1">
+    <Stream MimeType="image/x-fits">
+      <ArchivingUnit HostId="localhost:6010"/>
+    </Stream>
+    <Stream MimeType="ngas/nglog">
+      <ArchivingUnit HostId="localhost:6010"/>
+    </Stream>
+    <Stream MimeType="application/x-gfits">
+      <ArchivingUnit HostId="localhost:6010"/>
+    </Stream>
+    <Stream MimeType="application/x-cfits">
+      <ArchivingUnit HostId="localhost:6010"/>
+    </Stream>
+    <Stream MimeType="application/x-hfits">
+      <ArchivingUnit HostId="localhost:6010"/>
+    </Stream>
+    <Stream MimeType="cal/x-fits">
+      <ArchivingUnit HostId="localhost:6010"/>
+    </Stream>
+    <Stream MimeType="cal/x-tfits">
+      <ArchivingUnit HostId="localhost:6010"/>
+    </Stream>
+    <Stream MimeType="application/x-tar">
+      <ArchivingUnit HostId="localhost:6010"/>
+    </Stream>
+    <Stream MimeType="hst/data">
+      <ArchivingUnit HostId="localhost:6010"/>
+    </Stream>
+  </Streams>
+
+  <SubscriptionDef AutoUnsubscribe="1" BackLogExpTime="00T00:00:00"
+  Enable="0" Id="SubscriptionDef_OFF" SuspensionTime="0T00:03:00"/>
+
+  <SystemPlugIns DiskSyncPlugIn=" " DiskSyncPlugInPars=" "
+  Id="SystemPlugIns_NMU_0_SLOTS_1"
+  LabelPrinterPlugIn=""
+  LabelPrinterPlugInPars=""
+  OfflinePlugIn="ngamsGenericOfflinePlugIn" OfflinePlugInPars=" "
+  OnlinePlugIn="ngamsGenericOnlinePlugIn" OnlinePlugInPars=" "/>
+
+</NgamsCfg>
+
+

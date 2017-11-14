@@ -1,0 +1,1500 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0132)http://jewel68:8080/NGAST/XSLTProcessor?xml=http://www.eso.org/~jknudstr/ngamsLogDef.xml&xsl=http://www.eso.org/~jknudstr/LogDef.xsl -->
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY>
+<H2>Log Definition File: ngamsErrDef.xml</H2>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%"><BF>Context</BF> </TD>
+    <TD>NGAMS</TD></TR>
+  <TR>
+    <TD><BF>Release</BF> </TD>
+    <TD>1.0</TD></TR>
+  <TR>
+    <TD><BF>Source</BF> </TD>
+    <TD>jknudstr@eso.org</TD></TR>
+  <TR>
+    <TD><BF>Revision</BF> </TD>
+    <TD>@(#) $Id: ngamsLogDef.html,v 1.1.1.1 2009/12/28 13:17:44 jknudstr Exp $</TD></TR>
+  <TR>
+    <TD><BF>Description</BF> </TD>
+    <TD>This XML document contains the definition of the error logs used 
+      within the NG/AMS project. </TD></TR></TBODY></TABLE><BR><BR>
+<H3>Log Element Definitions:</H3>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_NO_STORAGE_SET</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>1000</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>No Storage Set matching the Slot ID: %s. Check NG/AMS Configuration: 
+      %s. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>NG/AMS could not find a Storage Set which matches the given Slot ID. 
+      There seems to be a problem in the NG/AMS Configuration. 
+</TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_NO_MIME_TYPES</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>1001</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>No mime-type/extension mappings defined in configuration file: %s 
+      (Element: MimeTypes)! </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>There are no mime-types/Data Handling Plug-In mappings defined in the 
+      NG/AMS Configuration. These are necessary in order to have each type of 
+      data file properly handled by NG/AMS. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_MISSING_ELEMENT</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>1002</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Could not find element: %s in NG/AMS Configuration: %s. Must be 
+      specified! </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The element referred to in the log text, was not found in the 
+      configuration file as expected. Must be specified in order to run the 
+      NG/AMS Server. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_CRE_GLOB_BAD_FILE_DIR</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>1004</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Problem creating Global Bad Files Directory: %s specified in 
+      configuration file: %s. Parameter: FileHandling.GlobalBadDirLoc. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The Global Bad Files Directory could not be created. Make the parent 
+      directory writable for the NG/AMS Server host account and try again. 
+  </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_CONF_PROP</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>1005</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>%s </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The value defined for the property referred is not properly defined. 
+      Must define a proper value. Check configuration file and try again. 
+  </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_CONF_FILE</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>1006</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>%s </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>An error occurred while parsing the configuration file at the position 
+      in the document as indicated by the error message. Check/correct 
+      configuration file and try again. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_ILL_MOUNT_ROOT_DIR</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>1007</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Illegal path specified for Mount Root Directory in configuration file: 
+      %s (Parameter: FileHandling.MountRootDirectory). Path given: %s. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The directory specified as Mount Root Directory is not writable or not 
+      existing. Create this and try again. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_LOAD_CFG</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>1008</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Problem encountered attempting to load the NG/AMS Configuration: %s. 
+      Error message: %s </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The specified configuration file could not be loaded. This could e.g. 
+      be due to that the file is not readable (has not read permissions) for the 
+      user running NG/AMS, or that the file is not available. 
+</TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_ILL_PROC_DIR</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>1009</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Illegal path specified for Processing Directory in configuration file: 
+      %s (Parameter: FileHandling.ProcessingDirectory). Path given: %s. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The directory specified as Processing Directory is not writable or not 
+      existing. Create this and try again. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_PLUGIN_PAR</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>1010</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Plug-In Parameters are improperly formatted: %s. Correct format is: 
+      (par)=(value),(par)=(value)... </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The Plug-IN Parameters defined in connection with a plug-in are not 
+      formatted as expected. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_MISSING_DISK_ID</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>2000</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Error - Disk ID: %s, not found in DB! </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>Could not find the Disk ID referred, in the DB. 
+</TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_WA_DB_CON</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>2001</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>WARNING</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>DB Connection not open - trying to reconnect ... </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>A problem occurred interacting with the DB. It will be attempted to 
+      connect again, to see if problem may be rectified. 
+</TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_DB_COM</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>2002</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Problems communicating with the DB: %s </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>A problem occurred interacting with the DB. It may be temporarily 
+      impossible to communicate with the DB server. When this situation occurrs, 
+      the system can buffer frames (if configured to do this). It will be 
+      attempted to archive these buffered frames at a later stage. 
+</TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_NOTICE_NGAS_HOSTS</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>2003</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>NOTICE</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Table ngas_hosts in the NGAS DB could not be accessed. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>A problem occurred while trying to access the ngas_hosts table in the 
+      NGAS DB. This in some cases is accepted as it it possible to operate 
+      NG/AMS without the availability of ngas_hosts. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_MAIN_DISK_WRONGLY_USED</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>3000</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Disk in slot: %s, with Logical Name: %s, is previously registered as a 
+      Main Disk but is now installed in a Replication Disk slot. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>When a disk has been registered by the system as being a Main Disk, it 
+      should not be attempted to use it later as a Replication Disk. The way to 
+      recover from this problem is to install the disk in a Main Disk Slot, 
+      together with the Replication Disk with which it was originally 
+      registered. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_REP_DISK_WRONGLY_USED</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>3001</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Disk in slot: %s, with Logical Name: %s, has previously been 
+      registered as a Replication Disk but is now installed in a Main Disk slot. 
+    </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>When a disk has been registered by the system as being a Replication 
+      Disk, it should not be attempted to use it later as a Main Disk. The way 
+      to recover from this problem is to install the disk in a Replication Disk 
+      Slot, together with the Main Disk with which it was originally registered. 
+    </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_DISK_INACCESSIBLE</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>3004</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Disk with ID: %s is not accessible (writable). </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>NG/AMS probes for each disk installed and configured for an archiving 
+      system if it is possible to write on the disk. If not an error is 
+      returned. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_NO_TARG_DISKS</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>3005</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>No target disks found for the Stream(s) with mime-type(s): %s. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>For each Data Stream Defined in the configuration file, a target disk 
+      must be available in order for the system to go Online (for an archiving 
+      unit). If such is not found, the system will not go Online. 
+</TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_DISK_STATUS</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>3006</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Error querying information for disk with ID: %s - cannot generate disk 
+      status on disk! </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>An error occurred while trying to query information about a disk from 
+      the NGAS DB. This means that it is not possible to generate the NGAS Disk 
+      Info Status File on the disk. This file is normally generated when the 
+      system goes Online/Offline. The status file for the the disk in question, 
+      may not be up to date. Note, maybe the problem is caused by incorrect 
+      information in connection with the disk. Could also be caused by a general 
+      problem with the communication with the DB server. 
+</TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_OFFLINE_PLUGIN</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>3007</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>%s </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>A problem occurred while executing the Offline Plug-In. The system 
+      could not be brought properly to Offline State, or some actions may have 
+      been skipped. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_ONLINE_PLUGIN</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>3008</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>%s </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>A problem occurred while executing the Online Plug-In. The system 
+      could not be brought properly to Offline State, or some actions may have 
+      been skipped. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_INIT_SERVER</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>3009</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Problems occurred initializing NG/AMS Server. Error message: %s </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>An error occurred while initializing the NG/AMS Server. The server 
+      could not be prepared for execution, and was terminated. Consult the 
+      NG/AMS Logs for further information. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_MULT_INST</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>3010</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Apparently an instance of the NG/AMS Server is running or the server 
+      was not shut down properly previously! If it is desirable to force the 
+      server to start, use the -force command line parameter. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>Another instance of the NG/AMS Server may be running already as it was 
+      intended to start a session. Having several NG/AMS Servers running in 
+      parallel, may cause conflicts. If it is the intention to star a new 
+      session the previous server should be terminated. Otherwise, if it is the 
+      intention to run two servers, another communication port number could be 
+      specified. A new session can be forced started using the -force command 
+      line option. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_INIT_LOG</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>3011</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Problem setting up logging properties! Check if log file: %s can be 
+      created! Exception: %s </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>A problem occurred setting up the properties for the logging. Check 
+      the configuration file and/or the command line input parameters ans try 
+      again. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_START_HTTP_SERV</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>3012</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Problems starting HTTP serving: %s </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The HTTP server could not be started. This could becaused by 
+      conflicting port numbers, or other problems in connection with the netword 
+      set-up. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_AL_NO_DISKS_AVAIL</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>3013</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ALERT</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>ALERT -- NO DISKS AVAILABLE IN THIS NGAS SYSTEM! NGAS ID: %s. Host ID: 
+      %s. Check HW and try again! </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>NG/AMS didn't find any disks installed in this system. Normally disks 
+      should be available for proper operation of the system. Check the disk 
+      configuration and try again. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_AL_NO_STO_SETS</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>3014</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ALERT</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>No Storage Sets found for mime-type: %s </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>No available Storage Set (disk set) was found for storing the data 
+      with the Mime-type as referred above in the error message. Check the disk 
+      configuration and the NG/AMS configuration. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_AL_NO_TARGET_DISK</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>3015</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ALERT</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>NO SUITABLE TARGET DISK FOUND FOR DATA WITH MIME-TYPE: %s. - PROBABLY 
+      NEED TO CHANGE DISKS! </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>No suitable Storage Set (disks) was found for storing the data with 
+      the Mime-type as referred above in the error message. Check the disk 
+      configuration and the NG/AMS configuration. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_INFO_STARTING_SRV</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>3016</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>INFO</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Starting/initializing NG/AMS Server - Version: %s - Host: %s - Port %d 
+    </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The NG/AMS Server is initializing and preparing for execution. 
+  </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_INFO_TERM_SRV</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>3017</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>INFO</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>NG/AMS Server terminating - Version: %s - Host: %s - Port %d </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The NG/AMS Server is cleaning and preparing to terminate execution. 
+  </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_EMAIL_NOTIF</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>3019</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Problem sending email notification message to: %s sender: %s, using 
+      SMTP host: %s. Error: %s. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The system could not send an Email Notification Message to the 
+      destination specified using the SMTP host specified. Check if the 
+      parameters are correct, in particular if the SMTP host is correctly 
+      specified and accessible. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_INFO_DATA_CHK_STAT</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>3020</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>INFO</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Number of files checked: %d. Amount of data checked: %.3f MB. Time for 
+      checking: %.3fs. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>After one Data Checking cycle has been executed, it is possible to 
+      configure NG/AMS to generate a log entry in the log outputs (CFG: 
+      NgamsCfg.FileHandling:DataCheckLogSummary). </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_ARCH_BACK_LOG_BUF</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>3021</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>An error occurred while archiving data found in NG/AMS Back-Log 
+      Buffer. Error: %s. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>An error was encountered when the NG/AMS Janitor Thread tried to 
+      archive a file found in the NG/AMS Back-Log Buffer. The symptom/type of 
+      the error is indicated in the error message. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_NO_DISK_SPACE</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>3022</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Not enough disk space for creating file: %s, of size: %d bytes. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>NG/AMS could not create a file with the given name of the given size. 
+    </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_RETRIEVE_KEYS</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4000</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Problem occurred retrieving key(s): %s, from data file: %s. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The keyword cards listed above, could not be found in the file 
+      referred. This means that the handling of the file could not be carried 
+      out as expected. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_DAPI</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4001</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>%s </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>An error occurred in the Data Handling Plug-In - the file has not been 
+      handled successfully, and has not been archived. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_REQ_HANDLING</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4002</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Error occurred handling request! Error/exception: %s </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>A problem occurred while handling a request issued to NG/AMS. The 
+      request could not be carried out successfully. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_ARCHIVE_PUSH_REQ</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4003</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Problem occurred handling Archive Push Request! URI: %s. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>A problem occurred while handling an Archive Push Request. The archive 
+      request has not been carried out successfully. It should be investigated 
+      what caused the problem, and the file should possibly be archived again. 
+    </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_ARCHIVE_PULL_REQ</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4004</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Problems occurred handling Archive Pull Request! URI: %s. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>A problem occurred while handling an Archive Pull Request. The archive 
+      request has not been carried out successfully. It should be investigated 
+      what caused the problem, and the file should possibly be archived again. 
+    </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_MISSING_URI</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4005</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Must specify a URI for the data file to archive! </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>When issuing an archive request, a URI must always be specified. This 
+      is used as reference to the file, and in the case of an Archive Pull 
+      Request, the URI is used to actually pick up the file. 
+</TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_UNKNOWN_MIME_TYPE1</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4006</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Could not determine mime-type for data file with URI: %s. Check NG/AMS 
+      Configuration. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>From the extension of the file URI given, the mime-type could not be 
+      determined, i.e., is not among the mime-types defined in the configuration 
+      file. Check the configuration file to see if support for this type of data 
+      file should be added. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_IMPROPER_STATE</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4007</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>%s not allowed when in State/Sub-State: %s/%s. Allowed 
+      State(s)/Sub-State(s) are: %s/%s. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The request issued cannot be handled by NG/AMS when in the 
+      State/Sub-State as indicated in the error message. Bring the system to one 
+      of the allowed States/Sub-States listed in the error message and try 
+      again. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_ILL_CMD</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4009</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Illegal command: %s received. Rejecting request! </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The command issued is not known/accepted by the NG/AMS Server. Check 
+      context and try again. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_ILL_REQ</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4010</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>This NG/AMS is not configured for accepting %s Requests. Rejecting 
+      request! </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>This installation of NG/AMS, is not configured for accepting the 
+      request type as specified in the error message. Re-consider the request 
+      issued, or to configure the server to handle the given type of request. 
+  </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_RETRIEVE_CMD</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4011</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Incorrect parameter given for RETRIEVE command. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The syntax specified for the RETRIEVE command is illegal. 
+  </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_UNKNOWN_FILE</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4012</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>File with ID: %s is not available. Rejecting request! </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>It was requested by a client to retrieve information about a certain 
+      file, or to return the file. This file however, is not available. Check 
+      the File ID and try again. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_UNKNOWN_DISK</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4013</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Could not retrieve information about disk with Disk ID: %s. Disk is 
+      probably unknown to this NG/AMS! Rejecting request! </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>NG/AMS was requested by a client to return information about a 
+      specific disk. This disk however, is not known to NG/AMS. Check the Disk 
+      ID (or other information given with the query) and try again. 
+  </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_ILL_RETRIEVE_REQ</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4014</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Illegal Disk ID found: %s for file with ID: %s. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The Disk ID registered in connection with the file with the given ID, 
+      is not know to NG/AMS. Check DB for inconsitent entries and try again. 
+  </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_WA_BUF_DATA</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4015</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>WARNING</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Problems occurred while handling file with URI: %s. Data will be 
+      buffered, and attempted archived at a later stage. Previous error stack: 
+      %s. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>A problem occurred while handling an Archive Request. The kind of 
+      error that occurred, may be recovered later. The data has therefore been 
+      buffered by NG/AMS, and will be attempted archived (by an internal 
+      procedure) at a later stage. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_PROB_STAGING_AREA</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4016</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Problem encountered, while storing data in Staging Area File: %s. 
+      Exception: %s </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>A problem occurred while storing the data on the HTTP connection into 
+      the Staging Area on the target disk. This might be caused by that the 
+      Staging Area directory is inaccessible, or the target disk as such, or 
+      that that there is no more space in the Staging Area. 
+</TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_PROB_BACKLOG_BUF</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4017</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Problem encountered, while storing data of file with URI: %s, in 
+      Back-Log Buffer: %s. Exception: %s </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>A problem occurred while storing data in the Back-Log Buffer Area. 
+      This might be caused by that the Back-Log Buffer directory is 
+      inaccessible, or the target disk as such, or that that there is no more 
+      space in the Staging Area. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_NOTICE_FILE_REINGESTED</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4018</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>NOTICE</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Note: File issued with URI: %s was already archived and has been 
+      re-ingested! </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The file issued was already archived and has been re-ingested into 
+      NGAS. This means in practice that an additional copy of the file is 
+      available in the NGAS data repository. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_INFO_ARCHIVING_FILE</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4019</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>INFO</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Archiving file with URI: %s </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>NG/AMS is about to handle/archive the file referenced in the log 
+      message. An additional message (additional messages) will follow this one 
+      indicating if the archiving was successfull or not. 
+</TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_INFO_FILE_ARCHIVED</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4020</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>INFO</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Successfully archived file with URI: %s </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The file referenced by its URI in the log message was successfully 
+      handled/archived by NG/AMS </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_MIS_PAR</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4021</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Missing parameter: %s in connection with command: %s. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>Together with the command issued, the parameter listed above should 
+      have been issued. Since this is not the case, the request cannot be 
+      handled. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_INFO_FILE_AVAIL</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4022</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>INFO</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>File with File ID: %s is available on NGAS system with host ID: %s. 
+  </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The file with the given File ID, is available and accessible on the 
+      NGAS system contacted. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_INFO_FILE_NOT_AVAIL</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4023</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>INFO</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>File with File ID: %s is not available on NGAS system with host ID: 
+      %s. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The file with the given File ID, is not available/accessible on the 
+      NGAS system contacted. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_INFO_RETRIEVE_REDIRECT</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4024</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>INFO</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Redirection URL: %s </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The file requested is not available on the NGAS system contacted, and 
+      the NG/AMS Server on this system cannot act as proxy to query the file and 
+      send it back. The file in question can be found at the URL given in the 
+      message. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_INFO_SERVICE_UNAVAIL</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4025</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>INFO</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>The service: %s is not available on this system. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The service needed for fulfilling the request is not available on this 
+      NG/AMS System. Could e.g. be File Retrieval. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_BAD_FILE</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4027</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Error occurred handling file: %s in DAPI: %s, Error: %s </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>A DAPI detected a problem/inconsistency in the file being handled. The 
+      file is considered as bad and cannot be archived properly. 
+</TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_ILL_DPPI</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4028</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Illegal DPPI: %s specified in connection with Retrieve Request. Given 
+      DPPI is not defined in the NG/AMS Configuration. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>An NG/AMS installation only accepts to execute DPPIs, which are 
+      explicitly defined in the NG/AMS Configuration. If a DPPI is specified, 
+      which is not defined in the configuration this will be rejected even if 
+      this DPPI might be available as such on the NGAS host handling the 
+      request. The problem can be solved by adding the name of the DPPI in the 
+      configuration file provided that this DPPI in fact is available on the 
+      system and that it is desirable to make this DPPI available for external 
+      users. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_CMD_SYNTAX</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4028</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>The combination of parameters given together with the command: %s is 
+      illegal. Parameter(s): %s. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The combinations of parameters given together with the command 
+      referred to in the error message is illegal (syntactic or semantically) 
+      wrong. Check the NG/AMS User's Manual or the online NG/AMS help for 
+      further information about the command. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_CMD_EXEC</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4029</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Problem(s) encountered executing command: %s. Error: %s </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>A problem or problems was/were encountered while executing the command 
+      indicated in the error message. This may be due to an illegal combination 
+      of parameters, or due to that prerequisites for executing the command are 
+      not fulfilled. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_DEL_FILE_DISK</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4030</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Problem(s) encountered deleting file from disk. Disk ID: %s, File ID: 
+      %s, File Version: %d. Exception: %s. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>A problem or problems was/were encountered while trying to delete the 
+      referenced file from an NGAS disk. Could be due to e.g. that the disk is 
+      read-only mounted or that the file itself is read-only. 
+</TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_DEL_FILE_DB</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4031</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Problem(s) encountered deleting file info from DB. Disk ID: %s, File 
+      ID: %s, File Version: %d. Exception: %s. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>A problem or problems was/were encountered while trying to delete the 
+      information for the referenced file from an NGAS DB. Could be due to that 
+      the DB user has not permission to carry out DELETE SQL statements. 
+  </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_INFO_DEL_FILE</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4032</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>INFO</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Successfully deleted info for file. Disk ID: %s, File ID: %s, File 
+      Version: %d. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The information for a file was successfully removed from the NGAS DB 
+      and from the NGAS disk hosting the file. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_INFO_FILE_DEL_STAT</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4033</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>INFO</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>File deletion status. Files Selected: %d, Files Deleted: %d, Failed 
+      File Deletions: %d. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>Status over a REMFILE command indicating 1) How many files were 
+      selected for deletion, 2) How many files were deleted, 3) How many 
+      attempts to delete file that failed. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_DEL_DISK</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4034</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Problem encountered deleting files on disk. Disk ID: %s. Exception: 
+      %s. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>A problem was encountered while trying to delete files on the disk 
+      with the Disk ID given in the error message. Maybe the disk is mounted 
+      read-only. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_DEL_DISK_DB</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4035</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Problem encountered deleting disk info from DB. Disk ID: %s. 
+      Exception: %s. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>A problem was encountered while trying to delete the information for a 
+      disk from the NGAS DB. Maybe the DB user used, does not have permission to 
+      execute DELETE SQL statements. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_INFO_DEL_DISK</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4036</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>INFO</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Successfully deleted info for disk. Disk ID: %s. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The information for a disk was successfully removed from the NGAS DB 
+      and the files on the disk successfully deleted. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_INFO_DEL_DISK_SEL</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4037</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>INFO</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Selected info for disk for deletion. Disk ID: %s. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The REMDISK command given, would delete the disk referenced to in the 
+      log message if execute=1 would be specified. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_WA_DEL_DISK2</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4038</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>WARNING</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>No disk found on NGAS host: %s with Disk ID: %s. No disk selected. 
+  </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The REMDISK command given, did not match any disk installed in the 
+      contacted NGAS host. </TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_WA_FILE_COPIES</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4039</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>WARNING</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>One or more files requested to be deleted are not available in at 
+      least 3 independent copies within this NGAS system. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>For security reasons it is enforced by NG/AMS to have at least two 
+      independent copies of each file (defined by a File ID + File Version). In 
+      case of a REMDISK or REMFILE command, it will be checked for each file 
+      that would be deleted by the request, if it is available within the NGAS 
+      system in at least 3 independent copies. An independent copies is defined 
+      as instances of one file stored on different storage media. 
+</TD></TR></TBODY></TABLE><BR>
+<TABLE width="100%" border=2>
+  <TBODY>
+  <TR>
+    <TD width="12.5%">Log ID</TD>
+    <TD>NGAMS_ER_UNKNOWN_MIME_TYPE2</TD></TR>
+  <TR>
+    <TD>Log Number</TD>
+    <TD>4040</TD></TR>
+  <TR>
+    <TD>Log Type</TD>
+    <TD>ERROR</TD></TR>
+  <TR>
+    <TD>Log Text</TD>
+    <TD>Illegal mime-type: %s issued in Archive Request for file with URI: %s. 
+      Rejecting request. </TD></TR>
+  <TR>
+    <TD>Description</TD>
+    <TD>The mime-type specified in the Arhcive Request for the file with the 
+      given URI is unknown to this NG/AMS installation. Check the configuration. 
+    </TD></TR></TBODY></TABLE><BR></BODY></HTML>

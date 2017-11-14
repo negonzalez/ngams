@@ -1,0 +1,14 @@
+Content-type: text/plain
+Content-disposition: attachment; filename=CloneStatusReport-TEST.2001-05-08T15:25:00.123
+
+CLONE STATUS REPORT:
+
+==Summary:
+
+Disk ID:                    -----
+File ID:                    TEST.2001-05-08T15:25:00.123
+File Version:               -----
+Total Number of Files:      1
+Number of Cloned Files:     1
+Number of Failed Files:     0
+

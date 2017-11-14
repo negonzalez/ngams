@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY % XmlStd SYSTEM "http://www.eso.org/projects/esoxml/XmlStd.dtd">
+%XmlStd;
+<!ENTITY % NgamsInternal SYSTEM "ngamsInternal.dtd">
+%NgamsInternal;
+
+<!-- 
+  E.S.O.
+ 
+  "@(#) $Id: ngamsCfg.dtd,v 1.1.1.1 2009/12/28 13:17:44 jknudstr Exp $"
+
+  Who        When        What
+  ********   **********  ***************************************************
+  jknudstr   04.04.2001  Created
+  **************************************************************************
+  ngamsCfgNau.dtd defines the contents and lay-out of the
+  configuration file loaded by the NG/AMS Server at start-up.
+
+  Consult the DTD ngamsInternal.dtd for further information. It contains the 
+  actual definition of the elements of the NG/AMS Configuration.
+  -->
+
+<!-- 
+  The NgamsCfg element is the root element of the NG/AMS
+  Configuration for NG/AMS NAU Systems.
+  -->
+<!ELEMENT NgamsCfg (Header, 
+                    (Ngams, Db, MimeTypes, StorageSet*,
+                     Stream*, Processing, Register, FileHandling, Monitor, 
+		     Log, Notification?, HostSuspension))>
+
+
+<!-- EOF -->

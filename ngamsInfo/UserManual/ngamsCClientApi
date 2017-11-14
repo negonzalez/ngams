@@ -1,0 +1,498 @@
+NAME
+ngamsArchive(), ngamsArchiveFromMem(), ngamsClone(), ngamsCmd2No(),
+ngamsCmd2Str(), ngamsDumpErrStdout(), ngamsEncodeUrlVal(), ngamsExit(),
+ngamsFreeStatus(), ngamsInitStatus(), ngamsIsDir(), ngamsLabel(),
+ngamsLicense(), ngamsOffline(), ngamsOnline(), ngamsRegister(),
+ngamsRemDisk(), ngamsRemFile(), ngamsRetrieve2File(), ngamsStat2Str(),
+ngamsStatus(), ngamsSubscribe(), ngamsToUpper(), ngamsUnsubscribe(),
+ngamsVersion() - C functions to interface to NG/AMS
+
+
+SYNOPSIS
+#include "ngams.h"
+
+In general for the NG/AMS interface functions listed below,
+the "host" parameter is the name of the host where the NG/AMS Server
+is running. E.g.: "arcus2.hq.eso.org". The "port" parameter is the
+socket port, which the NG/AMS Server is waiting on.
+
+If the parameter "wait" is set to 0, an immediate reply to the
+request will be generated, i.e. before the request has been handled.
+
+The parameter "status" is a structure containing the following members:
+
+Data Type       Member     Description
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ngamsSMALL_BUF  date       Date for handling query.
+ngamsSTAT       errorCode  Error code giving status for the query.
+                           See #1.
+ngamsSMALL_BUF  hostId     Host ID for host where the NG/AMS Server
+                           is running.
+ngamsHUGE_BUF   message    Message from the NG/AMS Server.
+ngamsSMALL_BUF  status     Status of query ("OK" | "FAILURE").
+ngamsSMALL_BUF  state      State of the NG/AMS Server.
+ngamsSMALL_BUF  subState   Sub-State of the NG/AMS Server.
+ngamsSMALL_BUF  version    Version of the NG/AMS Server.
+char            replyData  Pointer array of pointers pointing to
+                           allocated buffers contaiing the reply data
+                           from the request.
+
+
+#1: The following error codes (internal to the NG/AMS C API)
+    are defined (data type: ngamsSTAT):
+
+Error Macro             Description
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ngamsSTAT_SUCCESS       Query successfully executed.
+
+ngamsERR_HOST           No such host.
+ngamsERR_SOCK           Cannot create socket.
+ngamsERR_CON            Cannot connect to host/server.
+
+ngamsERR_COM            Problem occurred during socket connection.
+ngamsERR_TIMEOUT        Timeout encountered while communication with
+                        server.
+
+ngamsERR_WR_HD          Write error on socket while writing header.
+ngamsERR_WR_DATA        Write error on socket while writing data.
+ngamsERR_RD_DATA        Read error while reading data.
+ngamsERR_INV_REPLY      Invalid answer from data server.
+
+ngamsERR_FILE           Invalid filename specified.
+ngamsERR_ALLOC_MEM      Cannot allocate memory.
+
+ngamsERR_UNKNOWN_STAT   Unknown status code.
+ngamsERR_UNKNOWN_CMD    Unknown command issued.
+ngamsERR_INV_TARG_FILE  Invalid target filename specified.
+ngamsERR_INV_PARS       Invalid parameters given.
+
+ngamsSRV_OK             Request successfully handled by server.
+ngamsSRV_REDIRECT       The reply is an HTTP redirection response.
+
+ngamsSRV_INV_QUERY      Invalid query.
+
+
+Apart from that, the errors defined by NG/AMS can be returned.
+
+
+All functions return ngamsSTAT_SUCCESS in case of success. In case of
+an error a termination status within the set of status codes
+given above.
+
+
+The following macros are defined for referring to NG/AMS commands:
+
+Command Macros (#2)       Description
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ngamsCMD_ARCHIVE          Archive file.
+ngamsCMD_CLONE            Clone files.
+ngamsCMD_EXIT             Make NG/AMS Server exit.
+ngamsCMD_LABEL            Make NG/AMS print out a disk label.
+ngamsCMD_ONLINE           Bring NG/AMS Server Online.
+ngamsCMD_OFFLINE          Bring NG/AMS Server Offline.
+ngamsCMD_REGISTER         Register files on a disk.
+ngamsCMD_REMDISK          Remove a disk from the NGAS system.
+ngamsCMD_REMFILE          Remove a file from the NGAS system.
+ngamsCMD_RETRIEVE         Retrieve a file.
+ngamsCMD_STATUS           Query status information from NG/AMS.
+ngamsCMD_SUBSCRIBE        Subscribe to a NG/AMS Server.
+ngamsCMD_UNSUBSCRIBE      Un-subscribe/cancel a previous subscription.
+
+#2: All command macros exist also as a string, which carries the name
+    of the enumarated macro name with a "_STR" appended.
+
+
+In the following, the functions provided for interacting with NG/AMS
+are listed. The specific parameters for each function are listed in
+connection with the function. The parameters used by several
+functions are as follows:
+
+host:         Host name of NG/AMS Server to contact.
+
+port:         Port number used by NG/AMS Server to contact.
+
+timeoutSecs:  Timeout in seconds to apply while executing the request.
+
+wait:         Wait for the NG/AMS Server to finish the request (=1)
+              completely, or return an immdiate response (=0).
+
+status:       Pointer to ngamsSTATUS structure containing the
+              status of the query.
+
+The functions provided by the NG/AMS C-API:
+
+ngamsSTAT ngamsArchive(const char          *host,
+                       const int           port,
+                       const float         timeoutSecs,
+                       const char          *fileUri,
+                       const char          *mimeType,
+                       const int           noVersioning,
+                       const int           wait,
+                       ngamsSTATUS         *status)
+Archive a file in the NGAS system.
+
+fileUri:      Reference name for the file to archive.
+
+mimeType:     The mime-type of the file to archive. In some cases
+              it is not possible for NG/AMS to determine the mime-type
+              of a data file to be archived, e.g. when the file being is
+              archived is RETRIEVEd from another NGAS host. For efficiency
+              it is thus better to indicate the mime-type to enable
+              NG/AMS to store the file directly on the target disk.
+              If not use this can be put to "".
+
+noVersioning: If set to 1 no new File Version will be generated for
+              the file being archived even though a file with that
+              File ID was already existing.
+
+
+ngamsSTAT ngamsArchiveFromMem(const char          *host,
+                              const int           port,
+                              const float         timeoutSecs,
+                              const char          *fileUri,
+                              const char          *bufPtr,
+                              const int           size,
+                              const char          *mimeType,
+                              const int           noVersioning,
+                              const int           wait,
+                              ngamsSTATUS         *status)
+Archive a file which contents have been loaded into a buffer in memory.
+
+fileUri,
+mimeType,
+noVersioning: See ngamsArchive().
+
+bufPtr:       Pointer to buffer containing the contents of the file.
+
+size:         Size in bytes of the data loaded into memory.
+
+
+ngamsSTAT ngamsClone(const char          *host,
+                     const int           port,
+                     const float         timeoutSecs,
+                     const char          *fileId,
+                     const int           fileVersion,
+                     const char          *diskId,
+                     const int           wait,
+                     ngamsSTATUS         *status)
+Execute a CLONE command. For the exact interpretation of various
+combinations of fileId, fileVersion and diskId, consult the man-page
+for the NG/AMS Python module "ngamsCloneCmd", function: "clone()".
+
+fileId:          ID of file to clone.
+
+fileVersion:     Version of files to be taken into account for the
+                 cloning.
+
+diskId:          Disk ID for the files to be taken into account.
+
+
+ngamsSTAT ngamsCmd2No(const ngamsSMALL_BUF    cmdStr,
+                      ngamsCMD                *cmdCode)
+Convert a command given as string into the corresponding code (integer).
+
+cmdStr:    Command name as string.
+
+cmdCode:   Command code as defined by the enumerated type ngamsCMD.
+
+
+ngamsSTAT ngamsCmd2Str(const ngamsCMD    cmdCode,
+                       ngamsSMALL_BUF    cmdStr)
+Convert an NG/AMS command given as a code (integer) to a string.
+
+cmdCode,
+cmdStr:    See ngamsCmd2No().
+
+
+void ngamsDumpErrStdout(const ngamsSTATUS  *status)
+Dump an error message in the status structure on stdout.
+
+status:   Pointing to instance of the ngamsSTATUS structure containing
+          the information to print out.
+
+
+char *ngamsEncodeUrlVal(const char *urlVal,
+                        const int  skipScheme)
+Encode the value given as input parameter to replace special
+characters to make the value suitable for usage in a URL.
+
+urlVal:            Value to be encoded.
+
+skipScheme:        If the value is initiated with an HTTP scheme
+                   (ftp:, http:, file:), this will not be encoded
+                   if this flag is set to 1.
+
+
+void ngamsFreeStatus(ngamsSTATUS         *status)
+Free the memory occupied by the status object.
+
+status:   Pointing to instance of the ngamsSTATUS structure containing
+          the information to print out.
+
+
+void ngamsInitStatus(ngamsSTATUS         *status)
+Initialize the ngamsSTATUS structure, making it ready for usage within
+the NG/AMS C-API functions.
+
+status:   Pointing to instance of the ngamsSTATUS structure containing
+          the information to print out.
+
+
+int ngamsIsDir(const char  *fileName)
+Return 1 if the filename given is a directory, otherwise 0 is returned.
+
+fileName:    Name of directory to probe.
+
+
+ngamsSTAT ngamsExit(const char          *host,
+                    const int           port,
+                    const float         timeoutSecs,
+                    const int           wait,
+                    ngamsSTATUS         *status)
+Send an EXIT command to the NG/AMS Server to make it
+clean up and terminate execution.
+
+
+ngamsSTAT ngamsLabel(const char          *host,
+                     const int           port,
+                     const float         timeoutSecs,
+                     const char          *slotId,
+                     ngamsSTATUS         *status)
+Send a LABEL command to the NG/AMS Server.
+
+slotId:    ID of slot hosting the disk for which to generate the label.
+
+
+char *ngamsLicense(void)
+Return pointer to buffer containing the NG/AMS License Agreement.
+
+
+ngamsSTAT ngamsOffline(const char          *host,
+                       const int           port,
+                       const float         timeoutSecs,
+                       const int           force,
+                       const int           wait,
+                       ngamsSTATUS         *status)
+Send an OFFLINE command to the NG/AMS Server to bring it to Offline State.
+
+force:     Force the server to go Offline immediately, even though it is
+           busy.
+
+
+ngamsSTAT ngamsOnline(const char          *host,
+                      const int           port,
+                      const float         timeoutSecs,
+                      const int           wait,
+                      ngamsSTATUS         *status)
+Send an ONLINE command to the NG/AMS Server to bring it to Online State.
+
+
+ngamsSTAT ngamsRegister(const char          *host,
+                        const int           port,
+                        const float         timeoutSecs,
+                        const char          *path,
+                        const int           wait,
+                        ngamsSTATUS         *status)
+Send an REGISTER command to the NG/AMS Server to make it register
+a file or set of files.
+
+path:      Path starting point from which the scanning for files to
+           register will be initiated. Only files with a known mime-type
+           is taken into account.
+
+
+ngamsSTAT ngamsRemDisk(const char        *host,
+                       const int         port,
+                       const float       timeoutSecs,
+                       const char        *diskId,
+                       const int         execute,
+                       ngamsSTATUS       *status)
+Send a REMDISK command to the NG/AMS Server. If execute is 0 the
+disk information will not be deleted from the NGAS DB and from the
+the disk itself. Otherwise, if 1 is specified, this information will
+will be deleted.
+
+diskId:      ID of disk to remove.
+
+execute:     If set to 1 the command will be executed and the disk
+             removed from the system (if possible). Otherwise a report
+             will be send back indicating if it is possible to
+             remove the disk referenced.
+
+
+ngamsSTAT ngamsRemFile(const char        *host,
+                       const int         port,
+                       const float       timeoutSecs,
+                       const char        *diskId,
+                       const char        *fileId,
+                       const int         fileVersion,
+                       const int         execute,
+                       ngamsSTATUS       *status)
+Send a REMFILE command to the NG/AMS Server. If execute is 0 the
+disk information will not be deleted from the NGAS DB and from the
+the disk itself. Otherwise, if 1 is specified, this information will
+will be deleted. For the interpretation of various combinations of
+the parameters diskId, fileId, fileVersion and execute consult the
+man-page of the Python module "ngamsRemoveCmd", function remFile().
+
+diskId:        ID of disk hosting the file(s) to be removed.
+
+fileId:        ID of file(s) to be removed.
+
+fileVersion:   Version of file(s) to be removed.
+
+execute:       If set to 1 the files will be removed (if possible),
+               otherwise a report will be send back indicating what
+               would be removed if the command is executed.
+
+
+ngamsSTAT ngamsRetrieve2File(const char          *host,
+                             const int           port,
+                             const float         timeoutSecs,
+                             const char          *fileId,
+                             const int           fileVersion,
+                             const char          *processing,
+                             const char          *processingPars,
+                             const char          *targetFile,
+                             ngamsSTATUS         *status);
+Send a RETRIEVE command to the NG/AMS Server to retrieve a
+data file, and store this in a file on the local disk.
+
+fileId:           ID of the file to retrieve.
+
+fileVersion:      Specific version of file to retrieve. If set to -1 the
+                  latest version will be retrieved.
+
+processing:       Name of DPPI to be invoked by NG/AMS when data is
+                  retrieved.
+
+processingPars:   Optional list of parameters to hand over to the DPPI.
+
+targetFile:       If a valid filename is specified the data retrieved
+                  will be stored in a file with that name. If a directory
+                  is given, the data file retrieved will be stored in that
+                  directory with the name under which it is stored in
+                  NGAS. If this parameter is an empty string, it will be
+                  tried to stored the file retrieved under the NGAS
+                  archive name in the current working directory.
+
+
+ngamsSTAT ngamsStat2Str(const ngamsSTAT  statNo,
+                        ngamsMED_BUF     statStr)
+Convert a status code (ngamsSTAT) to a readable string.
+
+statNo:    Status as code.
+
+statStr:   Status as string.
+
+
+ngamsSTAT ngamsStatus(const char          *host,
+                      const int           port,
+                      const float         timeoutSecs,
+                      ngamsSTATUS         *status)
+Send a STATUS command to NG/AMS to query the current status of the
+system. No parameters are defined at present.
+
+
+ngamsSTAT ngamsSubscribe(const char          *host,
+                         const int           port,
+                         const float         timeoutSecs,
+                         const char          *url,
+                         const int           priority,
+                         const char          *startDate,
+                         const char          *filterPlugIn,
+                         const char          *filterPlugInPars,
+                         ngamsSTATUS         *status)
+Send a SUBSCRIBE to NG/AMS to subscribe for data or a specific type
+of data.
+
+url:                 Subscriber URL to where data is pushed.
+
+priority:            Priority of the Subscriber (low number = high
+                     priority). Default value 10.
+
+startDate:           Start date defining which data the subscription
+                     should take into account.
+
+filterPlugIn:        Optional Filter Plug-In to apply when selecting
+                     which data files to deliver to the clients.
+
+filterPlugInPars:    Optional Filter Plug-In Parameters to transfer
+                     to the Filter Plug-In.
+
+
+void ngamsToUpper(char *str)
+Convert a string to upper characters.
+
+str:   Pointer to string to convert.
+
+
+char *ngamsVersion(void)
+Return pointer to buffer with the NG/AMS version information.
+
+
+ngamsSTAT ngamsUnsubscribe(const char          *host,
+                           const int           port,
+                           const float         timeoutSecs,
+                           const char          *url,
+                           ngamsSTATUS         *status)
+Send an UNSUBSCRIBE to NG/AMS to subscribe for data or a specific type
+of data.
+
+url:                 Subscriber URL to where data is pushed.
+
+
+
+CAUTIONS
+This is a first implementation of the module. Changes may be
+introduced in order to improve the usability of the API.
+
+Remember to perform a call to ngamsInitStatus() right after declaring
+this, and a call to ngamsFreeStatus() after each call to one of the
+commands used to issue commands to NG/AMS. Memory may be allocated
+dynamically and needs to be freed.
+
+
+EXAMPLES
+To archive a file using the API the following must be called from
+the application:
+
+#include "ngams.h"
+
+ngamsSTATUS      status;
+if (ngamsArchive("wfinau", "7171", 10, "/home/data/MyFile.fits", "",
+                 1, 0, &status) != ngamsSTAT_SUCCESS)
+    {
+    ngamsDumpErrStdout(&status);
+    ... error handling ...
+    }
+
+
+To retrieve a file into the directory "/home/data/target_dir". The
+name will be the same as the File ID:
+
+#include "ngams.h"
+
+ngamsSTATUS      status;
+if (ngamsRetrieve2File("wfinau", "7171", 30,
+                       "WFI.2001-10-21T23:24:03.925",
+                       -1, "", "", "/home/data/target_dir",
+                       &status) != ngamsSTAT_SUCCESS)
+    {
+    ngamsDumpErrStdout(&status);
+    ... error handling ...
+    }
+
+
+
+CAUTIONS
+If data is returned by the NG/AMS Server the member "replyData" will
+have a pointer pointing to each block of data. It is the responsibility
+of the calling application to free these data chunks. The function
+"ngamsFreeStatus()" can be used for this.
+
+
+
+
+- - - - - -
+Last change:  24/12/02-12:24

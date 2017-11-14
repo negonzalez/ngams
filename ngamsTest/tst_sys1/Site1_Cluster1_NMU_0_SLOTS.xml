@@ -1,0 +1,171 @@
+Downloading DB configuration with ID: NMU_0_SLOTS_1 from the DB ...
+Dumping configuration with ID: NMU_0_SLOTS_1 from the DB:
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE NgamsCfg SYSTEM "ngamsCfg.dtd">
+
+<NgamsCfg>
+  <ArchiveHandling BackLogBufferDirectory="/NGAS" BackLogBuffering="0" FreeSpaceDiskChangeMb="0" Id="ArchiveHandling_NMU_0_SLOTS_1" MinFreeSpaceWarningMb="0" PathPrefix="---" Replication="0"/>
+  <Authorization Enable="0" Id="Authorization_OFF"/>
+  <DataCheckThread Active="0" ChecksumPlugIn="---" ChecksumPlugInPars=" " DiskSeq="SEQUENTIAL" FileSeq="SEQUENTIAL" ForceNotif="1" Id="DataCheckThread_DCC_OFF" LogSummary="1" MaxProcs="4" MinCycle="07T00:00:00" Prio="1" Scan="0"/>
+  <HostSuspension Id="HostSuspension_OFF" IdleSuspension="0" IdleSuspensionTime="60" SuspensionPlugIn="---" SuspensionPlugInPars=" " WakeUpCallTimeOut="0" WakeUpPlugIn="---" WakeUpPlugInPars=" " WakeUpServerHost="---"/>
+  <JanitorThread Id="JanitorThread_COMMON_1" MinSpaceSysDirMb="1000" SuspensionTime="0T00:03:00"/>
+  <Log Id="Log_COMMON_1" LocalLogFile="/NGAS/log/LogFile.nglog" LocalLogLevel="3" LogBufferSize="10" LogRotateCache="30" LogRotateInt="01T00:00:00" SysLog="1" SysLogPrefix="DFSLog"/>
+  <MimeTypes Id="MimeTypes_COMMON_1">
+    <MimeTypeMap Extension="hdr" MimeType="image/x-fitshdr"/>
+    <MimeTypeMap Extension="tar" MimeType="application/x-tar"/>
+    <MimeTypeMap Extension="tfits" MimeType="cal/x-tfits"/>
+    <MimeTypeMap Extension="fits.gz" MimeType="apex/x-gfits"/>
+    <MimeTypeMap Extension="fits" MimeType="apex/x-fits"/>
+    <MimeTypeMap Extension="fits" MimeType="image/x-fits"/>
+    <MimeTypeMap Extension="nglog" MimeType="ngas/nglog"/>
+    <MimeTypeMap Extension="nglog.Z" MimeType="application/x-cnglog"/>
+    <MimeTypeMap Extension="log" MimeType="text/log-file"/>
+    <MimeTypeMap Extension="log.Z" MimeType="application/x-clog"/>
+    <MimeTypeMap Extension="paf" MimeType="text/paf"/>
+    <MimeTypeMap Extension="fits.gz" MimeType="application/x-gfits"/>
+    <MimeTypeMap Extension="fits.Z" MimeType="application/x-cfits"/>
+    <MimeTypeMap Extension="hfits" MimeType="application/x-hfits"/>
+  </MimeTypes>
+  <Notification Active="1" Id="Notification_GAR" MaxRetentionSize="1000" MaxRetentionTime="00T00:30:00" Sender="ngast@eso.org" SmtpHost="smtphost.hq.eso.org">
+    <AlertNotification>
+      <EmailRecipient Address="ngasgop@eso.org"/>
+      <EmailRecipient Address="ngast@eso.org"/>
+      <EmailRecipient Address="DEFINE@eso.org"/>
+    </AlertNotification>
+    <DataCheckNotification>
+      <EmailRecipient Address="ngasgop@eso.org"/>
+      <EmailRecipient Address="ngast@eso.org"/>
+    </DataCheckNotification>
+    <DiskChangeNotification>
+      <EmailRecipient Address="ngasgop@eso.org"/>
+      <EmailRecipient Address="ngast@eso.org"/>
+      <EmailRecipient Address="DEFINE@eso.org"/>
+    </DiskChangeNotification>
+    <DiskSpaceNotification>
+      <EmailRecipient Address="ngasgop@eso.org"/>
+      <EmailRecipient Address="ngast@eso.org"/>
+      <EmailRecipient Address="DEFINE@eso.org"/>
+    </DiskSpaceNotification>
+    <ErrorNotification>
+      <EmailRecipient Address="ngasgop@eso.org"/>
+      <EmailRecipient Address="ngast@eso.org"/>
+      <EmailRecipient Address="DEFINE@eso.org"/>
+    </ErrorNotification>
+    <NoDiskSpaceNotification>
+      <EmailRecipient Address="ngasgop@eso.org"/>
+      <EmailRecipient Address="ngast@eso.org"/>
+      <EmailRecipient Address="DEFINE@eso.org"/>
+    </NoDiskSpaceNotification>
+  </Notification>
+  <Permissions AllowArchiveReq="1" AllowProcessingReq="1" AllowRemoveReq="0" AllowRetrieveReq="1" Id="Permissions_NMU"/>
+  <Processing Id="Processing_NMU_0_SLOTS_1" ProcessingDirectory="/NGAS"/>
+  <Register Id="Register_DISABLED"/>
+  <Server ArchiveName="ESO-ARCHIVE" BlockSize="65536" Id="Server_COMMON_1" MaxSimReqs="30" MountRootDirectory="/NGAS" PortNo="7777" ProxyMode="1" Simulation="0" SwVersion=" "/>
+  <Streams Id="Streams_NMU_0_SLOTS_1">
+    <Stream MimeType="image/x-fits">
+      <ArchivingUnit HostId="jewel40"/>
+      <ArchivingUnit HostId="jewel41"/>
+      <ArchivingUnit HostId="jewel42"/>
+      <ArchivingUnit HostId="jewel43"/>
+      <ArchivingUnit HostId="jewel44"/>
+      <ArchivingUnit HostId="jewel45"/>
+      <ArchivingUnit HostId="jewel37"/>
+      <ArchivingUnit HostId="jewel38"/>
+      <ArchivingUnit HostId="jewel39"/>
+    </Stream>
+    <Stream MimeType="ngas/nglog">
+      <ArchivingUnit HostId="jewel40"/>
+      <ArchivingUnit HostId="jewel41"/>
+      <ArchivingUnit HostId="jewel42"/>
+      <ArchivingUnit HostId="jewel43"/>
+      <ArchivingUnit HostId="jewel44"/>
+      <ArchivingUnit HostId="jewel45"/>
+      <ArchivingUnit HostId="jewel37"/>
+      <ArchivingUnit HostId="jewel38"/>
+      <ArchivingUnit HostId="jewel39"/>
+    </Stream>
+    <Stream MimeType="application/x-gfits">
+      <ArchivingUnit HostId="jewel40"/>
+      <ArchivingUnit HostId="jewel41"/>
+      <ArchivingUnit HostId="jewel42"/>
+      <ArchivingUnit HostId="jewel43"/>
+      <ArchivingUnit HostId="jewel44"/>
+      <ArchivingUnit HostId="jewel45"/>
+      <ArchivingUnit HostId="jewel37"/>
+      <ArchivingUnit HostId="jewel38"/>
+      <ArchivingUnit HostId="jewel39"/>
+    </Stream>
+    <Stream MimeType="application/x-cfits">
+      <ArchivingUnit HostId="jewel40"/>
+      <ArchivingUnit HostId="jewel41"/>
+      <ArchivingUnit HostId="jewel42"/>
+      <ArchivingUnit HostId="jewel43"/>
+      <ArchivingUnit HostId="jewel44"/>
+      <ArchivingUnit HostId="jewel45"/>
+      <ArchivingUnit HostId="jewel37"/>
+      <ArchivingUnit HostId="jewel38"/>
+      <ArchivingUnit HostId="jewel39"/>
+    </Stream>
+    <Stream MimeType="application/x-hfits">
+      <ArchivingUnit HostId="jewel40"/>
+      <ArchivingUnit HostId="jewel41"/>
+      <ArchivingUnit HostId="jewel42"/>
+      <ArchivingUnit HostId="jewel43"/>
+      <ArchivingUnit HostId="jewel44"/>
+      <ArchivingUnit HostId="jewel45"/>
+      <ArchivingUnit HostId="jewel37"/>
+      <ArchivingUnit HostId="jewel38"/>
+      <ArchivingUnit HostId="jewel39"/>
+    </Stream>
+    <Stream MimeType="cal/x-fits">
+      <ArchivingUnit HostId="jewel40"/>
+      <ArchivingUnit HostId="jewel41"/>
+      <ArchivingUnit HostId="jewel42"/>
+      <ArchivingUnit HostId="jewel43"/>
+      <ArchivingUnit HostId="jewel44"/>
+      <ArchivingUnit HostId="jewel45"/>
+      <ArchivingUnit HostId="jewel37"/>
+      <ArchivingUnit HostId="jewel38"/>
+      <ArchivingUnit HostId="jewel39"/>
+    </Stream>
+    <Stream MimeType="cal/x-tfits">
+      <ArchivingUnit HostId="jewel40"/>
+      <ArchivingUnit HostId="jewel41"/>
+      <ArchivingUnit HostId="jewel42"/>
+      <ArchivingUnit HostId="jewel43"/>
+      <ArchivingUnit HostId="jewel44"/>
+      <ArchivingUnit HostId="jewel45"/>
+      <ArchivingUnit HostId="jewel37"/>
+      <ArchivingUnit HostId="jewel38"/>
+      <ArchivingUnit HostId="jewel39"/>
+    </Stream>
+    <Stream MimeType="application/x-tar">
+      <ArchivingUnit HostId="jewel40"/>
+      <ArchivingUnit HostId="jewel41"/>
+      <ArchivingUnit HostId="jewel42"/>
+      <ArchivingUnit HostId="jewel43"/>
+      <ArchivingUnit HostId="jewel44"/>
+      <ArchivingUnit HostId="jewel45"/>
+      <ArchivingUnit HostId="jewel37"/>
+      <ArchivingUnit HostId="jewel38"/>
+      <ArchivingUnit HostId="jewel39"/>
+    </Stream>
+    <Stream MimeType="hst/data">
+      <ArchivingUnit HostId="jewel40"/>
+      <ArchivingUnit HostId="jewel41"/>
+      <ArchivingUnit HostId="jewel42"/>
+      <ArchivingUnit HostId="jewel43"/>
+      <ArchivingUnit HostId="jewel44"/>
+      <ArchivingUnit HostId="jewel45"/>
+      <ArchivingUnit HostId="jewel37"/>
+      <ArchivingUnit HostId="jewel38"/>
+      <ArchivingUnit HostId="jewel39"/>
+    </Stream>
+  </Streams>
+  <SubscriptionDef AutoUnsubscribe="1" BackLogExpTime="00T00:00:00" Enable="0" Id="SubscriptionDef_OFF" SuspensionTime="0T00:03:00"/>
+  <SystemPlugIns DiskSyncPlugIn=" " DiskSyncPlugInPars=" " Id="SystemPlugIns_NMU_0_SLOTS_1" LabelPrinterPlugIn="ngamsBrotherPT9200DxPlugIn" LabelPrinterPlugInPars="dev=/dev/null,font_file=/opsw/packages/ngams/ngamsData/ngamsBrotherPT9200DxFonts.fnt" OfflinePlugIn="ngasNmuOfflinePi" OfflinePlugInPars=" " OnlinePlugIn="ngasNmuOnlinePi" OnlinePlugInPars=" "/>
+</NgamsCfg>
+
+

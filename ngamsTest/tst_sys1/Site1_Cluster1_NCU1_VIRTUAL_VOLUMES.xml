@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE NgamsCfg SYSTEM "ngamsCfg.dtd">
+
+<NgamsCfg Id="PA_NCU_VIRTUAL_VOLUMES-TST">
+
+  <ArchiveHandling BackLogBufferDirectory="/tmp/NGAS-TMP/SITE1/NCU1" 
+  BackLogBuffering="0" FreeSpaceDiskChangeMb="50" 
+  MinFreeSpaceWarningMb="100" PathPrefix="data" Replication="0"/>
+
+  <Authorization Enable="0"/>
+
+  <DataCheckThread Active="1" ChecksumPlugIn="ngamsGenCrc32"
+  ChecksumPlugInPars=" " DiskSeq="SEQUENTIAL" FileSeq="SEQUENTIAL"
+  ForceNotif="0" LogSummary="1" MaxProcs="16" MinCycle="02T00:00:00"
+  Prio="1" Scan="0"/>
+
+  <Db Id="Db-DEV15SRV-ngas"
+      AutoRecover="1"
+      Interface="ngamsSybase" 
+      Name="ngas" 
+      Password="bmdhc19wdw==" 
+      Server="DEV15SRV" 
+      Snapshot="1" 
+      User="ngas"
+      Verify="1"/>
+
+  <HostSuspension IdleSuspension="0" IdleSuspensionTime="60"
+  SuspensionPlugIn="---" SuspensionPlugInPars=" "
+  WakeUpCallTimeOut="0" WakeUpPlugIn="---" WakeUpPlugInPars=" "
+  WakeUpServerHost="---"/>
+
+  <JanitorThread MinSpaceSysDirMb="1000" SuspensionTime="0T00:03:00"/>
+
+  <Log LocalLogFile="/tmp/NGAS-TMP/SITE1/NCU1/log/LogFile.nglog" 
+  LocalLogLevel="3" LogBufferSize="10" LogRotateCache="30"
+  LogRotateInt="01T00:00:00" SysLog="1" SysLogPrefix="DFSLog"/>
+
+  <MimeTypes>
+    <MimeTypeMap Extension="fits.gz" MimeType="application/x-gfits"/>
+    <MimeTypeMap Extension="fits.Z" MimeType="application/x-cfits"/>
+    <MimeTypeMap Extension="hfits" MimeType="application/x-hfits"/>
+    <MimeTypeMap Extension="hdr" MimeType="image/x-fitshdr"/>
+    <MimeTypeMap Extension="tar" MimeType="application/x-tar"/>
+    <MimeTypeMap Extension="tfits" MimeType="cal/x-tfits"/>
+    <MimeTypeMap Extension="fits.gz" MimeType="apex/x-gfits"/>
+    <MimeTypeMap Extension="fits" MimeType="apex/x-fits"/>
+    <MimeTypeMap Extension="fits" MimeType="image/x-fits"/>
+    <MimeTypeMap Extension="nglog" MimeType="ngas/nglog"/>
+    <MimeTypeMap Extension="nglog.Z" MimeType="application/x-cnglog"/>
+    <MimeTypeMap Extension="fits.fz" MimeType="application/x-tcfits"/>
+    <MimeTypeMap Extension="log" MimeType="text/log-file"/>
+    <MimeTypeMap Extension="log.Z" MimeType="application/x-clog"/>
+    <MimeTypeMap Extension="paf" MimeType="text/paf"/>
+  </MimeTypes>
+
+  <Notification Id="Notification-Test"
+                SmtpHost="localhost"
+                Sender="ngast@eso.org"
+                Active="1"
+                MaxRetentionTime="00T00:30:00"
+                MaxRetentionSize="1000">
+    <AlertNotification>
+      <EmailRecipient Address="DEFINE@eso.org"/>
+    </AlertNotification>
+      
+    <ErrorNotification>
+      <EmailRecipient Address="DEFINE@eso.org"/>
+    </ErrorNotification>
+
+    <DiskSpaceNotification>
+      <EmailRecipient Address="DEFINE@eso.org"/>
+    </DiskSpaceNotification>
+
+    <DiskChangeNotification>
+      <EmailRecipient Address="DEFINE@eso.org"/>
+    </DiskChangeNotification>
+
+    <NoDiskSpaceNotification>
+      <EmailRecipient Address="DEFINE@eso.org"/>
+    </NoDiskSpaceNotification>
+
+    <DataErrorNotification>
+      <EmailRecipient Address="DEFINE@eso.org"/>
+    </DataErrorNotification>
+  </Notification>
+
+  <Permissions AllowArchiveReq="1" AllowProcessingReq="1"
+  AllowRemoveReq="1" AllowRetrieveReq="1"/>
+
+  <Processing ProcessingDirectory="/tmp/NGAS-TMP/SITE1/NCU1">
+
+    <PlugIn Name="ngamsEsoArchDppi" PlugInPars=" ">
+      <MimeType Name="image/x-fits"/>
+      <MimeType Name="application/x-gfits"/>
+      <MimeType Name="application/x-cfits"/>
+    </PlugIn>
+
+    <PlugIn Name="ngasExtractFitsHdrDppi" PlugInPars=" ">
+      <MimeType Name="image/x-fits"/>
+      <MimeType Name="application/x-gfits"/>
+      <MimeType Name="application/x-cfits"/>
+    </PlugIn>
+
+    <PlugIn Name="ngamsExtractHeaderDppi" PlugInPars=" ">
+      <MimeType Name="image/x-fits"/>
+      <MimeType Name="application/x-gfits"/>
+      <MimeType Name="application/x-cfits"/>
+    </PlugIn>
+
+    <PlugIn Name="ngasWfiPreview" PlugInPars=" ">
+      <MimeType Name="image/x-fits"/>
+      <MimeType Name="application/x-gfits"/>
+      <MimeType Name="application/x-cfits"/>
+    </PlugIn>
+
+    <PlugIn Name="ngamsHeaderOnTheFlyDppi" PlugInPars=" ">
+      <MimeType Name="image/x-fits"/>
+      <MimeType Name="application/x-gfits"/>
+      <MimeType Name="application/x-cfits"/>
+    </PlugIn>
+
+  </Processing>
+
+  <Register>
+    <PlugIn Name="ngamsFitsRegPlugIn"
+            PlugInPars="checksum_util=utilFitsChecksum,checksum_result=0/0000000000000000">
+      <MimeType Name="image/x-fits"/>
+      <MimeType Name="application/x-gfits"/>
+      <MimeType Name="application/x-cfits"/>
+    </PlugIn>
+  </Register>
+
+  <Server ArchiveName="ESO-ARCHIVE"
+          BlockSize="65536" 
+	  MaxSimReqs="100"
+	  RootDirectory="/tmp/NGAS-TMP/SITE1/NCU1" 
+	  PortNo="6010" 
+	  ProxyMode="0"
+	  Simulation="0" 
+	  SwVersion=" "
+          VolumeDirectory="volumes"/>
+
+  <StorageSets>
+    <StorageSet DiskLabel="TEST" MainDiskSlotId="volume01" Mutex="0"
+    StorageSetId="StorageSet01"/>
+
+    <StorageSet DiskLabel="TEST" MainDiskSlotId="volume02" Mutex="0"
+    StorageSetId="StorageSet02"/>
+
+    <StorageSet DiskLabel="TEST" MainDiskSlotId="volume03" Mutex="0"
+    StorageSetId="StorageSet03"/>
+
+    <StorageSet DiskLabel="TEST" MainDiskSlotId="volume04" Mutex="0"
+    StorageSetId="StorageSet04"/>
+  </StorageSets>
+
+  <Streams>
+
+    <Stream MimeType="cal/x-tfits" PlugIn="ngamsCalibDapi"
+    PlugInPars=" ">
+      <StorageSetRef StorageSetId="StorageSet01"/>
+      <StorageSetRef StorageSetId="StorageSet02"/>
+      <StorageSetRef StorageSetId="StorageSet03"/>
+      <StorageSetRef StorageSetId="StorageSet04"/>
+    </Stream>
+
+    <Stream MimeType="application/x-tar" PlugIn="ngasTarBallPlugIn"
+      PlugInPars=" ">
+      <StorageSetRef StorageSetId="StorageSet01"/>
+      <StorageSetRef StorageSetId="StorageSet02"/>
+      <StorageSetRef StorageSetId="StorageSet03"/>
+      <StorageSetRef StorageSetId="StorageSet04"/>
+    </Stream>
+
+    <Stream MimeType="hst/data" PlugIn="ngasHstDapi" PlugInPars=" ">
+      <StorageSetRef StorageSetId="StorageSet01"/>
+      <StorageSetRef StorageSetId="StorageSet02"/>
+      <StorageSetRef StorageSetId="StorageSet03"/>
+      <StorageSetRef StorageSetId="StorageSet04"/>
+    </Stream>
+
+    <Stream MimeType="text/plain" PlugIn="ngasGenDapi" PlugInPars=" ">
+      <StorageSetRef StorageSetId="StorageSet01"/>
+      <StorageSetRef StorageSetId="StorageSet02"/>
+      <StorageSetRef StorageSetId="StorageSet03"/>
+      <StorageSetRef StorageSetId="StorageSet04"/>
+    </Stream>
+
+    <Stream MimeType="application/octet-stream" PlugIn="ngasGenDapi"
+      PlugInPars=" ">
+      <StorageSetRef StorageSetId="StorageSet01"/>
+      <StorageSetRef StorageSetId="StorageSet02"/>
+      <StorageSetRef StorageSetId="StorageSet03"/>
+      <StorageSetRef StorageSetId="StorageSet04"/>
+    </Stream>
+
+    <Stream MimeType="application/c-octet-stream" PlugIn="ngasGenDapi"
+      PlugInPars=" ">
+      <StorageSetRef StorageSetId="StorageSet01"/>
+      <StorageSetRef StorageSetId="StorageSet02"/>
+      <StorageSetRef StorageSetId="StorageSet03"/>
+      <StorageSetRef StorageSetId="StorageSet04"/>
+    </Stream>
+
+    <Stream MimeType="apex/x-fits" PlugIn="ngasApexDapi"
+      PlugInPars="frame_ingest_db_id=ESO_ECF">
+      <StorageSetRef StorageSetId="StorageSet01"/>
+      <StorageSetRef StorageSetId="StorageSet02"/>
+      <StorageSetRef StorageSetId="StorageSet03"/>
+      <StorageSetRef StorageSetId="StorageSet04"/>
+    </Stream>
+
+    <Stream MimeType="image/png" PlugIn="ngasGenDapi" PlugInPars=" ">
+      <StorageSetRef StorageSetId="StorageSet01"/>
+      <StorageSetRef StorageSetId="StorageSet02"/>
+      <StorageSetRef StorageSetId="StorageSet03"/>
+      <StorageSetRef StorageSetId="StorageSet04"/>
+    </Stream>
+
+    <Stream MimeType="application/olas-pre-proc"
+      PlugIn="ngamsFitsPlugIn" PlugInPars="compression=compress
+      -f,checksum_util=utilFitsChecksum,checksum_result=0/0000000000000000,olas_pre_proc=1,frame_ingest_db_id=ESO_ECF">
+      <StorageSetRef StorageSetId="StorageSet01"/>
+      <StorageSetRef StorageSetId="StorageSet02"/>
+      <StorageSetRef StorageSetId="StorageSet03"/>
+      <StorageSetRef StorageSetId="StorageSet04"/>
+    </Stream>
+
+    <Stream MimeType="image/jpeg" PlugIn="ngasGenDapi" PlugInPars=" ">
+      <StorageSetRef StorageSetId="StorageSet01"/>
+      <StorageSetRef StorageSetId="StorageSet02"/>
+      <StorageSetRef StorageSetId="StorageSet03"/>
+      <StorageSetRef StorageSetId="StorageSet04"/>
+    </Stream>
+
+    <Stream MimeType="application/x-tab" PlugIn="ngasGenDapi" PlugInPars=" ">
+      <StorageSetRef StorageSetId="StorageSet01"/>
+      <StorageSetRef StorageSetId="StorageSet02"/>
+      <StorageSetRef StorageSetId="StorageSet03"/>
+      <StorageSetRef StorageSetId="StorageSet04"/>
+    </Stream>
+
+    <Stream MimeType="application/x-fits" PlugIn="ngasGenDapi" PlugInPars=" ">
+      <StorageSetRef StorageSetId="StorageSet01"/>
+      <StorageSetRef StorageSetId="StorageSet02"/>
+      <StorageSetRef StorageSetId="StorageSet03"/>
+      <StorageSetRef StorageSetId="StorageSet04"/>
+    </Stream>
+
+    <Stream MimeType="image/x-fits" PlugIn="ngamsFitsPlugIn"
+      PlugInPars="compression=compress -f,checksum_util=utilFitsChecksum,checksum_result=0/0000000000000000">
+      <StorageSetRef StorageSetId="StorageSet01"/>
+      <StorageSetRef StorageSetId="StorageSet02"/>
+      <StorageSetRef StorageSetId="StorageSet03"/>
+      <StorageSetRef StorageSetId="StorageSet04"/>
+    </Stream>
+
+    <Stream MimeType="ngas/nglog" PlugIn="ngamsFitsPlugIn"
+      PlugInPars="compression=compress
+      -f,checksum_util=utilFitsChecksum,checksum_result=0/0000000000000000">
+      <StorageSetRef StorageSetId="StorageSet01"/>
+      <StorageSetRef StorageSetId="StorageSet02"/>
+      <StorageSetRef StorageSetId="StorageSet03"/>
+      <StorageSetRef StorageSetId="StorageSet04"/>
+    </Stream>
+
+    <Stream MimeType="application/x-gfits"
+      PlugIn="ngamsFitsPlugIn" PlugInPars="compression=compress
+      -f,checksum_util=utilFitsChecksum,checksum_result=0/0000000000000000">
+      <StorageSetRef StorageSetId="StorageSet01"/>
+      <StorageSetRef StorageSetId="StorageSet02"/>
+      <StorageSetRef StorageSetId="StorageSet03"/>
+      <StorageSetRef StorageSetId="StorageSet04"/>
+    </Stream>
+
+    <Stream MimeType="application/x-cfits"
+      PlugIn="ngamsFitsPlugIn" PlugInPars="compression=compress
+      -f,checksum_util=utilFitsChecksum,checksum_result=0/0000000000000000">
+      <StorageSetRef StorageSetId="StorageSet01"/>
+      <StorageSetRef StorageSetId="StorageSet02"/>
+      <StorageSetRef StorageSetId="StorageSet03"/>
+      <StorageSetRef StorageSetId="StorageSet04"/>
+    </Stream>
+
+    <Stream MimeType="application/x-hfits"
+      PlugIn="ngamsFitsPlugIn" PlugInPars="compression=compress
+      -f,checksum_util=utilFitsChecksum,checksum_result=0/0000000000000000">
+      <StorageSetRef StorageSetId="StorageSet01"/>
+      <StorageSetRef StorageSetId="StorageSet02"/>
+      <StorageSetRef StorageSetId="StorageSet03"/>
+      <StorageSetRef StorageSetId="StorageSet04"/>
+    </Stream>
+
+    <Stream MimeType="cal/x-fits" PlugIn="ngamsCalibDapi" PlugInPars="">
+      <StorageSetRef StorageSetId="StorageSet01"/>
+      <StorageSetRef StorageSetId="StorageSet02"/>
+      <StorageSetRef StorageSetId="StorageSet03"/>
+      <StorageSetRef StorageSetId="StorageSet04"/>
+    </Stream>
+
+  </Streams>
+
+  <SubscriptionDef AutoUnsubscribe="1" BackLogExpTime="00T00:00:00"
+  Enable="0" SuspensionTime="0T00:03:00"/>
+
+  <SystemPlugIns DiskSyncPlugIn="ngamsDiskSyncPlugIn"
+  DiskSyncPlugInPars=" " LabelPrinterPlugIn=" "
+  LabelPrinterPlugInPars=" " OfflinePlugIn="ngamsGenericOfflinePlugIn"
+  OfflinePlugInPars=" " OnlinePlugIn="ngamsGenericOnlinePlugIn"
+  OnlinePlugInPars=" "/>
+
+
+</NgamsCfg>
+
+
